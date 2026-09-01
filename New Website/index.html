@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Food Passport — 200 Countries. Countless Meals. One Passport.</title>
+<meta name="description" content="Turn your next meal into an adventure. The Food Passport is a physical journal for discovering the world, one dish at a time.">
+
+<!-- Google Fonts: Baloo 2 (display, matches the passport's own hand-drawn title lettering) + Inter (body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://foodpassport.netlify.app/">
+
+<!-- Structured data: update the URLs/logo here if you move to a custom domain -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Food Passport",
+  "url": "https://foodpassport.netlify.app/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Food Passport",
+  "url": "https://foodpassport.netlify.app/",
+  "logo": "https://foodpassport.netlify.app/images/logo.png"
+}
+</script>
+<!-- Product schema: intentionally left without "offers" (price/availability)
+     until those details are finalized. Add an "offers" object once you have
+     a real price and Etsy link — inventing one now would mislead search
+     engines and shoppers. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "The Food Passport",
+  "description": "A physical food-journal for discovering cuisines from around the world, one dish at a time.",
+  "image": "https://foodpassport.netlify.app/images/cover.jpg"
+}
+</script>
+<!-- FAQPage schema: only includes FAQ answers that are already finalized in
+     the page content. Add the remaining Q&As here once you fill in the
+     [EDIT: ...] placeholders in the FAQ section below, so search engines
+     never see the bracketed placeholder text. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the Food Passport work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick a country, find a restaurant serving that cuisine, try a dish, then record the experience on that country's page \u2014 the restaurant, the dish, and your rating. Then move on to the next country whenever you're ready."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- TEMP placeholder logo: swap for final unwatermarked logo before publishing -->
+        <img src="images/logo.png" alt="" class="brand-mark-img brand-mark-img--header">
+      </span>
+      <span class="brand-text">The Food Passport</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="explore.html">Explore</a>
+      <a href="coming-soon.html" class="btn btn-stamp nav-cta">Coming Soon</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-texture" aria-hidden="true"></div>
+    <div class="hero-wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow eyebrow-light">A Passport For Your Palate</p>
+        <h1 class="hero-title">
+          200 Countries.<br>
+          Countless Meals.<br>
+          <span class="hero-title-accent">One Passport.</span>
+        </h1>
+        <p class="hero-sub">
+          Turn your next meal into an adventure. Discover cuisines from around the world, try new restaurants, and document every delicious experience along the way.
+        </p>
+        <div class="hero-actions">
+          <a href="coming-soon.html" class="btn btn-stamp btn-large">Get Your Food Passport</a>
+          <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+        </div>
+        <p class="hero-price-note">Coming Soon &middot; Ships worldwide</p>
+      </div>
+
+      <div class="hero-art reveal" aria-hidden="false">
+        <div class="hero-stack">
+          <img class="hero-cover" src="images/cover.jpg" alt="The Food Passport — International Food Passport cover, a travel-style journal for recording food from every country in the world">
+          <img class="hero-page hero-page-a" src="images/page-belgium.jpg" alt="A completed-style Belgium page inside The Food Passport, with flag, fun fact, and space to record a dish and restaurant">
+          <div class="hero-stamp" aria-hidden="true">
+            <svg viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="62" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 6"/>
+              <path id="stampCircle" d="M 70,70 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" fill="none"/>
+              <text font-size="11.5" letter-spacing="3" fill="currentColor">
+                <textPath href="#stampCircle" startOffset="2%">FIRST STAMP &bull; PICK A COUNTRY &bull;</textPath>
+              </text>
+              <text x="70" y="76" text-anchor="middle" font-size="18" font-weight="700" fill="currentColor">EAT</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <p class="eyebrow">The Concept</p>
+      <h2 class="section-title">Four steps to your next favourite dish</h2>
+      <p class="section-lede">No plane ticket required. Just an appetite for something new.</p>
+
+      <ol class="steps">
+        <li class="steps-item reveal">
+          <span class="steps-number">01</span>
+          <div class="steps-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 24h36M24 6c6 5 6 31 0 36M24 6c-6 5-6 31 0 36M9 15h30M9 33h30" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </div>
+          <h3>Pick a Country</h3>
+          <p>Choose a country you&rsquo;ve never explored.</p>
+        </li>
+        <li class="steps-item reveal">
+          <span class="steps-number">02</span>
+          <div class="steps-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 4c9 0 15 7 15 15 0 11-15 25-15 25S9 30 9 19C9 11 15 4 24 4z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="19" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Find a Restaurant</h3>
+          <p>Find a local restaurant serving that country&rsquo;s cuisine.</p>
+        </li>
+        <li class="steps-item reveal">
+          <span class="steps-number">03</span>
+          <div class="steps-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M14 4v16a4 4 0 004 4 4 4 0 004-4V4M14 4v10M18 4v10M22 4v10M22 24v20M34 4c-5 0-8 5-8 11 0 4 2 7 5 8v21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Try Something New</h3>
+          <p>Order a dish you&rsquo;ve never tried before.</p>
+        </li>
+        <li class="steps-item reveal">
+          <span class="steps-number">04</span>
+          <div class="steps-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 6h20l8 8v28H10z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M30 6v8h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 24h16M16 30h16M16 36h10" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Record Your Adventure</h3>
+          <p>Fill out your Food Passport and start planning your next culinary adventure.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INSIDE ============ -->
+  <section class="section section-alt" id="whats-inside">
+    <div class="container inside-grid">
+      <div class="inside-copy reveal">
+        <p class="eyebrow">Inside The Passport</p>
+        <h2 class="section-title">Every page is a new place to eat</h2>
+        <p class="section-lede">
+          Each country gets its own page: a flag, a fun fact, and space to log exactly what you ordered, where you had it, and how it stacked up. Flip through once and you&rsquo;ve got a growing record of every cuisine you&rsquo;ve crossed off the list.
+        </p>
+        <ul class="feature-list">
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>Approximately 200 pages to fill in</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>Countries from every region of the world</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>A flag and a fun fact for every country</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>Restaurant tracking &mdash; name, city, and date</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>Dish tracking &mdash; what you ordered and how you&rsquo;d describe it</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>A rating &amp; stamp space to mark the visit</li>
+          <li><span class="feature-tick" aria-hidden="true">&#10003;</span>A physical keepsake, not a PDF &mdash; built to be filled in again and again</li>
+        </ul>
+        <a href="coming-soon.html" class="btn btn-stamp">Get Your Food Passport</a>
+      </div>
+
+      <div class="inside-art reveal" aria-hidden="false">
+        <img class="inside-page inside-page-back" src="images/page-canada.jpg" alt="Canada page inside The Food Passport, with flag, fun fact, and space to record a restaurant and dish">
+        <img class="inside-page inside-page-front" src="images/page-india.jpg" alt="India page inside The Food Passport, with flag, fun fact, and space to record a restaurant and dish">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT SHOWCASE ============ -->
+  <section class="section" id="showcase">
+    <div class="container">
+      <p class="eyebrow">A Look Inside</p>
+      <h2 class="section-title">Pages from the passport</h2>
+      <p class="section-lede">A small taste of the countries waiting inside &mdash; drag or scroll to see more.</p>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <div class="gallery-track">
+        <figure class="gallery-item reveal">
+          <img src="images/cover.jpg" alt="The Food Passport cover, a travel-inspired journal cover reading International Food Passport, food from every country in the world">
+          <figcaption>The Cover</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-peru.jpg" alt="Peru page inside The Food Passport">
+          <figcaption>Peru &middot; South America</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-japan.jpg" alt="Japan page inside The Food Passport">
+          <figcaption>Japan &middot; Asia</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-mexico.jpg" alt="Mexico page inside The Food Passport">
+          <figcaption>Mexico &middot; North America</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-italy.jpg" alt="Italy page inside The Food Passport">
+          <figcaption>Italy &middot; Europe</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-india.jpg" alt="India page inside The Food Passport">
+          <figcaption>India &middot; Asia</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-chile.jpg" alt="Chile page inside The Food Passport">
+          <figcaption>Chile &middot; South America</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="images/page-thailand.jpg" alt="Thailand page inside The Food Passport">
+          <figcaption>Thailand &middot; Asia</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item-more reveal" aria-hidden="false">
+          <div class="gallery-more">
+            <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
+              <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5"/>
+              <path d="M24 15v18M15 24h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p class="gallery-more-title">And Many More</p>
+            <p class="gallery-more-sub">Countries from every region, waiting to be stamped.</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+    <div class="gallery-controls container">
+      <button class="gallery-btn" id="galleryPrev" aria-label="Scroll gallery left">&larr;</button>
+      <button class="gallery-btn" id="galleryNext" aria-label="Scroll gallery right">&rarr;</button>
+    </div>
+  </section>
+
+  <!-- ============ MORE THAN A JOURNAL ============ -->
+  <section class="section section-quote">
+    <div class="quote-texture" aria-hidden="true"></div>
+    <div class="container quote-wrap reveal">
+      <div class="quote-stamp" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5"/></svg>
+      </div>
+      <p class="eyebrow eyebrow-light">More Than a Restaurant Journal</p>
+      <h2 class="quote-title">It&rsquo;s not just about where you eat.<br>It&rsquo;s about where the food takes you.</h2>
+      <p class="quote-body">
+        Every stamp in The Food Passport starts the same way: an ordinary dinner. But somewhere between the menu and the last bite, it becomes something else &mdash; a small trip into another country&rsquo;s culture, without ever leaving your table. One dish, one country, one story at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PERFECT FOR ============ -->
+  <section class="section" id="perfect-for">
+    <div class="container">
+      <p class="eyebrow">Perfect For</p>
+      <h2 class="section-title">However you like to use it</h2>
+
+      <div class="perfect-grid">
+        <div class="perfect-card reveal">
+          <div class="perfect-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 42s-16-9.5-16-21A9 9 0 0124 12a9 9 0 0116 9c0 11.5-16 21-16 21z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Date Night</h3>
+          <p>Turn dinner into an adventure for two.</p>
+        </div>
+        <div class="perfect-card reveal">
+          <div class="perfect-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6l4.5 12.5L41 22l-12.5 3.5L24 38l-4.5-12.5L7 22l12.5-3.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Foodie Challenge</h3>
+          <p>See how many countries you can experience.</p>
+        </div>
+        <div class="perfect-card reveal">
+          <div class="perfect-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 6c-5 5-8 10.5-8 18s3 13 8 18c5-5 8-10.5 8-18s-3-13-8-18z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M6.5 17.5h35M6.5 30.5h35" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+          <h3>Travel Inspiration</h3>
+          <p>Discover cuisines from places you want to visit.</p>
+        </div>
+        <div class="perfect-card reveal">
+          <div class="perfect-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="22" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 26h32M24 18v22M16 18c-3-6 2-10 8-6 6-4 11 0 8 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Gift Idea</h3>
+          <p>A unique gift for food lovers, travellers, couples, and adventurous eaters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section-alt" id="faq">
+    <div class="container faq-wrap">
+      <p class="eyebrow">Good to Know</p>
+      <h2 class="section-title">Frequently asked questions</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>How many countries are included?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>[EDIT: add exact country count here].</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Is this a digital product or a physical book?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>[EDIT: confirm physical/digital format, materials, and dimensions here].</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>How does the Food Passport work?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>Pick a country, find a restaurant serving that cuisine, try a dish, then record the experience on that country&rsquo;s page &mdash; the restaurant, the dish, and your rating. Then move on to the next country whenever you&rsquo;re ready.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Is it suitable for couples?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>[EDIT: add specific notes on using it as a couples activity, if relevant].</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Is it a good gift?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>[EDIT: add gifting details &mdash; packaging, gift note options, etc.].</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section final-cta">
+    <div class="hero-texture" aria-hidden="true"></div>
+    <div class="container final-cta-wrap reveal">
+      <img class="final-cover" src="images/cover.jpg" alt="The Food Passport cover">
+      <div>
+        <h2 class="final-title">Where Will You Eat Next?</h2>
+        <p class="final-sub">Your culinary adventure starts with the first country.</p>
+        <a href="coming-soon.html" class="btn btn-stamp btn-large">Get Your Food Passport</a>
+        <p class="hero-price-note">Coming Soon &middot; Ships worldwide</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <a href="#home" class="brand brand-footer">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- TEMP placeholder logo: swap for final unwatermarked logo before publishing -->
+        <img src="images/logo.png" alt="" class="brand-mark-img brand-mark-img--footer">
+      </span>
+      <span class="brand-text">The Food Passport</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="explore.html">Explore</a>
+      <a href="coming-soon.html">Coming Soon</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> The Food Passport. Made for people who eat like they travel.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

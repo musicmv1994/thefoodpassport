@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Cuisine Should You Try Next? — The Food Passport</title>
+<meta name="description" content="Answer 12 quick questions and find out which cuisine to add to your Food Passport next.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="quiz.css">
+<link rel="canonical" href="https://foodpassport.netlify.app/quiz.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Which Cuisine Should You Try Next?",
+  "description": "Answer 12 quick questions and find out which cuisine to add to your Food Passport next.",
+  "url": "https://foodpassport.netlify.app/quiz.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Food Passport",
+    "url": "https://foodpassport.netlify.app/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- TEMP placeholder logo: swap for final unwatermarked logo before publishing -->
+        <img src="images/logo.png" alt="" class="brand-mark-img brand-mark-img--header">
+      </span>
+      <span class="brand-text">The Food Passport</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#whats-inside">What&rsquo;s Inside</a>
+      <a href="quiz.html">Cuisine Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="coming-soon.html" class="btn btn-stamp nav-cta">Get Your Passport</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ QUIZ INTRO ============ -->
+  <section class="section quiz-intro">
+    <div class="container">
+      <p class="eyebrow" style="text-align:center;">A Little Food Fortune-Telling</p>
+      <h1 class="section-title quiz-intro-title">Which Cuisine Should You Try Next?</h1>
+      <p class="section-lede quiz-intro-lede">
+        Answer 12 quick questions about how you like to eat, and we&rsquo;ll stamp your next country. The quiz pulls from a pool of close matches, so taking it again &mdash; even with similar answers &mdash; won&rsquo;t always land you on the same place.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ CARD ============ -->
+  <section class="section section-alt quiz-section">
+    <div class="container">
+      <div class="quiz-card" id="quizCard">
+
+        <div class="quiz-progress">
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+          <span class="quiz-progress-label" id="quizProgressLabel">Question 1 of 12</span>
+        </div>
+
+        <!-- Question view -->
+        <div id="quizQuestionView">
+          <h2 class="quiz-question" id="quizQuestionText">Loading&hellip;</h2>
+          <div class="quiz-options" id="quizOptions"></div>
+        </div>
+
+        <!-- Results view -->
+        <div id="quizResultsView" class="quiz-results" hidden>
+          <p class="eyebrow" style="text-align:center;">Your Stamp Is Ready</p>
+          <h2 class="quiz-result-heading">Your Next Cuisine Is&hellip;</h2>
+
+          <div class="quiz-result-stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 6"/>
+              <path id="resultStampCircle" d="M 60,60 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none"/>
+              <text font-size="9" letter-spacing="2" fill="currentColor">
+                <textPath href="#resultStampCircle" startOffset="2%">PASSPORT STAMPED &bull; BON APP&Eacute;TIT &bull;</textPath>
+              </text>
+              <text x="60" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="currentColor">EAT</text>
+            </svg>
+          </div>
+
+          <h3 class="quiz-result-country" id="quizResultCountry">Country</h3>
+          <p class="quiz-result-blurb" id="quizResultBlurb">Blurb</p>
+          <div class="quiz-result-tags" id="quizResultTags"></div>
+
+          <div class="quiz-also-consider">
+            <p class="eyebrow" style="text-align:center;">Also In The Running</p>
+            <ul class="quiz-pool-list" id="quizPoolList"></ul>
+          </div>
+
+          <div class="coming-soon-actions">
+            <button type="button" class="btn btn-ghost" id="quizReroll">Give Me Another Match</button>
+            <button type="button" class="btn btn-stamp" id="quizRestart">Retake The Quiz</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <a href="index.html" class="brand brand-footer">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- TEMP placeholder logo: swap for final unwatermarked logo before publishing -->
+        <img src="images/logo.png" alt="" class="brand-mark-img brand-mark-img--footer">
+      </span>
+      <span class="brand-text">The Food Passport</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#whats-inside">What&rsquo;s Inside</a>
+      <a href="quiz.html">Cuisine Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="coming-soon.html">Coming Soon</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> The Food Passport. Made for people who eat like they travel.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>

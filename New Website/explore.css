@@ -1,0 +1,377 @@
+/* ==========================================================================
+   THE FOOD PASSPORT — Cuisine Quiz page styles
+   Extends the tokens and patterns defined in style.css. No new colors.
+   ========================================================================== */
+
+.quiz-intro { padding-bottom: 40px; }
+.quiz-intro-title { max-width: none; text-align: center; margin: 0 auto; }
+.quiz-intro-lede { max-width: 56ch; margin-left: auto; margin-right: auto; text-align: center; }
+
+.quiz-section { padding-top: 64px; }
+
+.quiz-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 40px 36px 44px;
+  box-shadow: 0 20px 40px rgba(38, 60, 68, 0.1);
+}
+
+/* ---- Start screen ---- */
+.quiz-start { text-align: center; padding: 20px 0 8px; }
+.quiz-start-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--teal-deep);
+  margin-bottom: 22px;
+}
+
+/* ---- Progress ---- */
+.quiz-progress { margin-bottom: 30px; }
+.quiz-progress-track {
+  height: 8px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--teal);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+.quiz-progress-label {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: var(--teal-soft);
+}
+
+/* ---- Question ---- */
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--teal-deep);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+.quiz-options {
+  display: grid;
+  gap: 14px;
+}
+.quiz-option {
+  text-align: left;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+.quiz-option:hover {
+  border-color: var(--teal);
+  transform: translateX(2px);
+}
+.quiz-option:active {
+  transform: translateX(0);
+  border-color: var(--stamp-red);
+}
+
+/* ---- Results ---- */
+.quiz-results { text-align: center; }
+.quiz-result-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--teal-deep);
+  margin: 8px 0 20px;
+}
+.quiz-result-stamp {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px;
+  color: var(--stamp-red);
+}
+.quiz-result-country {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--teal-deep);
+  margin-bottom: 12px;
+}
+.quiz-result-blurb {
+  max-width: 52ch;
+  margin: 0 auto;
+  color: rgba(36, 55, 63, 0.78);
+  font-size: 1.02rem;
+}
+.quiz-result-tags {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.quiz-tag-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: var(--paper);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.quiz-also-consider {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px dashed var(--line);
+}
+.quiz-pool-list {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.quiz-pool-list li {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 0.94rem;
+  color: rgba(36, 55, 63, 0.82);
+}
+.quiz-pool-list li strong {
+  color: var(--teal-deep);
+  font-family: var(--font-display);
+}
+
+/* ---- Shared game section headings ---- */
+.quiz-game-title { max-width: none; text-align: center; margin: 0 auto; }
+.quiz-game-lede {
+  max-width: 56ch;
+  margin: 14px auto 40px;
+  text-align: center;
+}
+
+/* ---- Divider between the two games ---- */
+.explore-divider {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .quiz-card { padding: 30px 22px 34px; }
+  .quiz-question { font-size: 1.2rem; }
+}
+
+/* ==========================================================================
+   GUESS THE COUNTRY — game styles
+   Mirrors the cuisine-quiz card pattern above so both games feel like part
+   of the same Explore page.
+   ========================================================================== */
+
+.gc-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 40px 36px 44px;
+  box-shadow: 0 20px 40px rgba(38, 60, 68, 0.1);
+}
+
+/* ---- Progress ---- */
+.gc-progress { margin-bottom: 26px; }
+.gc-progress-track {
+  height: 8px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.gc-progress-fill {
+  height: 100%;
+  width: 10%;
+  background: var(--stamp-red);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+.gc-progress-label {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: var(--teal-soft);
+}
+
+/* ---- Clue list ---- */
+.gc-clue-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.gc-clue-list li {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 0.98rem;
+  color: rgba(36, 55, 63, 0.82);
+  line-height: 1.45;
+}
+.gc-clue-list li .gc-clue-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--teal-deep);
+  margin-right: 6px;
+}
+.gc-clue-list li:last-child {
+  background: var(--teal-deep);
+  color: var(--cream);
+}
+.gc-clue-list li:last-child .gc-clue-number { color: var(--gold); }
+
+/* ---- Feedback line ---- */
+.gc-feedback {
+  min-height: 1.4em;
+  margin: 0 0 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--stamp-red);
+  text-align: center;
+}
+.gc-feedback.gc-feedback--correct { color: var(--teal); }
+
+/* ---- Guess form (free-text input) ---- */
+.gc-guess-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--teal-deep);
+  margin-bottom: 14px;
+  text-align: center;
+}
+.gc-guess-row {
+  display: flex;
+  gap: 12px;
+}
+.gc-guess-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: border-color 0.2s ease;
+}
+.gc-guess-input:focus {
+  border-color: var(--teal);
+  outline: none;
+}
+.gc-guess-row .btn {
+  flex-shrink: 0;
+}
+
+/* ---- Past guesses ---- */
+.gc-past-guesses {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.gc-past-guesses-label {
+  color: rgba(36, 55, 63, 0.6);
+  margin-right: 6px;
+}
+.gc-past-guess-chip {
+  display: inline-block;
+  background: var(--cream);
+  color: rgba(36, 55, 63, 0.6);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin: 3px 3px;
+  text-decoration: line-through;
+}
+
+/* ---- Results ---- */
+.gc-results { text-align: center; }
+.gc-result-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--teal-deep);
+  margin: 0 0 10px;
+}
+.gc-result-flag { font-size: 3rem; margin: 0 0 6px; line-height: 1; }
+.gc-result-country {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+  color: var(--teal-deep);
+  margin-bottom: 10px;
+}
+.gc-result-score {
+  font-weight: 700;
+  color: var(--stamp-red);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.gc-result-clues-line {
+  color: rgba(36, 55, 63, 0.78);
+  margin-bottom: 20px;
+}
+
+.gc-result-funfact,
+.gc-result-recap,
+.gc-result-blog {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+}
+.gc-result-funfact p:last-child {
+  max-width: 52ch;
+  margin: 0 auto;
+  color: rgba(36, 55, 63, 0.8);
+}
+.gc-recap-list {
+  margin: 14px auto 0;
+  max-width: 52ch;
+  text-align: left;
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.gc-recap-list li {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: rgba(36, 55, 63, 0.78);
+}
+.gc-result-blog p { margin-bottom: 14px; color: rgba(36, 55, 63, 0.8); }
+
+@media (max-width: 600px) {
+  .gc-card { padding: 30px 22px 34px; }
+  .gc-guess-row { flex-direction: column; }
+  .gc-guess-row .btn { width: 100%; }
+  .gc-guess-label { font-size: 1rem; }
+}
